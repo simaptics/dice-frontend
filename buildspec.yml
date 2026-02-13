@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  variables:
+    S3_BUCKET: dice.simaptics.com
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo Installing dependencies...
+      - npm ci
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Syncing build/ to S3...
+      - aws s3 sync ./build s3://$S3_BUCKET/ --delete
+      - echo Deployment completed on `date`
+
+artifacts:
+  files: []
