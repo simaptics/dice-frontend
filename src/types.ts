@@ -11,4 +11,5 @@ export interface RollResult {
     total: number;
     modifier: number;
     final: number;
+    sides: number;
 }
