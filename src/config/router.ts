@@ -1,1 +1,1 @@
-export const BASENAME = process.env.REACT_APP_BASENAME || "";
+export const BASENAME = import.meta.env.VITE_BASENAME || "";

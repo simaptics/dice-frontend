@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RollResult } from "../types";
+import type { RollResult } from "../types";
 import { BASENAME } from '../config/router'
 
 interface Props {
@@ -20,7 +20,7 @@ const ResultDisplay: React.FC<Props> = ({ result }) => {
         setHistory([]);
     };
     
-    const diceTypes = [4, 6, 8, 10, 12, 20, 100];
+    // const diceTypes = [4, 6, 8, 10, 12, 20, 100];
 
     // Sprite info
     const SPRITE_W = 768;
@@ -35,8 +35,6 @@ const ResultDisplay: React.FC<Props> = ({ result }) => {
     const ICON_W = 60;
     const ICON_H = 60;
 
-    const scaleX = ICON_W / TILE_W;
-    const scaleY = ICON_H / TILE_H;
 
     const SPRITE_MAP: Record<number, { col: number; row: number }> = {
       8:  { col: 0, row: 0 },
@@ -105,7 +103,7 @@ const ResultDisplay: React.FC<Props> = ({ result }) => {
                 paddingRight: 6,
               }}
             >
-                {history.map((r, idx) => (
+                {history.map((r) => (
                     <div
                       style={{
                         background: "#0b1220",

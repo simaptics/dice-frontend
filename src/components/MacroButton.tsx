@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Macro } from "../types";
 
 interface Props {
   onSave: (name: string) => void;

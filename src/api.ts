@@ -1,13 +1,11 @@
-// src/api/api.ts
-import axios, { AxiosRequestConfig } from "axios";
-import { Macro, RollResult } from "./types";
-import { NavigateFunction } from "react-router-dom";
+import axios, { type AxiosRequestConfig } from "axios";
+import type { Macro, RollResult } from "./types";
 
-const AUTHURL = process.env.REACT_APP_AUTH_HOST_URL;
+const AUTHURL = import.meta.env.VITE_AUTH_HOST_URL;
 const BASEURL =
-  process.env.REACT_APP_DICE_HOST_URL?.includes("simaptics")
-    ? process.env.REACT_APP_DICE_HOST_URL
-    : process.env.REACT_APP_MAIN_HOST_URL;
+  import.meta.env.VITE_DICE_HOST_URL?.includes("simaptics")
+    ? import.meta.env.VITE_DICE_HOST_URL
+    : import.meta.env.VITE_MAIN_HOST_URL;
 
 export const axiosInstance = axios.create({
   baseURL: `${BASEURL}`,
@@ -23,7 +21,7 @@ export interface AxiosRequestConfigWithSkip extends AxiosRequestConfig {
 }
 
 // ---------------- Interceptor setup ----------------
-export const setupAxiosInterceptors = (navigate: NavigateFunction) => {
+export const setupAxiosInterceptors = () => {
   axiosInstance.interceptors.response.use(
     (response) => response,
     async (error) => {

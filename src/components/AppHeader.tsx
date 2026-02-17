@@ -1,16 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-const AUTH = `${process.env.REACT_APP_AUTH_HOST_URL}`;
-const BASE = `${process.env.REACT_APP_MAIN_HOST_URL}`;
+const AUTH = `${import.meta.env.VITE_AUTH_HOST_URL}`;
+const BASE = `${import.meta.env.VITE_MAIN_HOST_URL}`;
 
 type AppHeaderProps = {
   isLoggedIn: boolean;
 };
 
 const AppHeader: React.FC<AppHeaderProps> = ({ isLoggedIn }) => {
-  const navigate = useNavigate();
-
   return (
     <div
       style={{

@@ -1,5 +1,5 @@
 import React from "react";
-import { Macro } from "../types";
+import type { Macro } from "../types";
 
 interface Props {
   macros: Macro[];

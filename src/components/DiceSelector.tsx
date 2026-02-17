@@ -29,9 +29,6 @@ const DiceSelector: React.FC<DiceSelectorProps> = ({
   const ICON_W = 60;
   const ICON_H = 60;
 
-  const scaleX = ICON_W / TILE_W;
-  const scaleY = ICON_H / TILE_H;
-
   const SPRITE_MAP: Record<number, { col: number; row: number }> = {
     8:  { col: 0, row: 0 },
     20: { col: 1, row: 0 },

@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client'; // Use `react-dom/client` for React 18
-import AppWithRouter from './App'; 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 import "./index.css";
+import { BASENAME } from './config/router'
 
-//import "bootstrap/dist/css/bootstrap.min.css";
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-root.render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <AppWithRouter />
+    <BrowserRouter basename={BASENAME}>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

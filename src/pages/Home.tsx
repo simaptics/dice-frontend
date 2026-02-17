@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Macro, RollResult } from "../types";
+import type { Macro, RollResult } from "../types";
 import { rollDice, getMacros, createOrUpdateMacro, deleteMacro, loggedIn } from "../api";
 import DiceSelector from "../components/DiceSelector";
 import ModifierInput from "../components/ModifierInput";
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
       }
     };
 
-    const handleMacroDelete = async (name?: string) => {
+    const handleMacroDelete = async () => {
         // If no macro is selected, do nothing
         if (!selectedMacro) return;
     
