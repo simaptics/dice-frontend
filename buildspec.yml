@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     DICE_BUCKET: dice.simaptics.com
+    MODE: production
 
 phases:
   install:
@@ -15,7 +16,7 @@ phases:
   build:
     commands:
       - echo Building dcie...
-      - npm run build
+      - npm run build --mode $MODE
 
   post_build:
     commands:
