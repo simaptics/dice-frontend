@@ -36,7 +36,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({ isLoggedIn }) => {
         }}
       >
         <img
-          src={`${BASENAME}/images/simaptics-favicon.jpeg`} // change to your image path
+          src={`${BASENAME}/simaptics-favicon.jpeg`} // change to your image path
           alt="Simaptics"
           style={{
             width: "40px",
