@@ -1,4 +1,5 @@
 import React from "react";
+import { BASENAME } from '../config/router'
 
 const AUTH = `${import.meta.env.VITE_AUTH_HOST_URL}`;
 const BASE = `${import.meta.env.VITE_MAIN_HOST_URL}`;
@@ -34,7 +35,14 @@ const AppHeader: React.FC<AppHeaderProps> = ({ isLoggedIn }) => {
           color: "black",
         }}
       >
-        Simaptics
+        <img
+          src={`${BASENAME}/images/simaptics-favicon.jpeg`} // change to your image path
+          alt="Simaptics"
+          style={{
+            width: "40px",
+            height: "40px",
+          }}
+        />
       </button>
 
       {/* Right: Login Button (only if not authenticated) */}
